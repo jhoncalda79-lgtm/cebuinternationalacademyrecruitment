@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers at Cebu International Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #FAF8F4;
+    --paper-warm: #F1EBE3;
+    --ink: #221F1D;
+    --ink-soft: #58524C;
+    --maroon: #8A1B2A;
+    --maroon-deep: #5E1119;
+    --stone: #8C8B84;
+    --stone-light: #DAD7CD;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+    font-size: 16px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    line-height: 1.14;
+    color: var(--ink);
+  }
+
+  a { color: inherit; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- HEADER ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--stone-light);
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .brand { display: flex; align-items: center; gap: 12px; }
+
+  .seal {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--maroon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--maroon);
+    flex-shrink: 0;
+  }
+
+  .brand-text { font-family: 'Fraunces', serif; font-size: 15.5px; line-height: 1.25; }
+  .brand-text .full { display: block; }
+  .brand-text .kicker { display: block; font-size: 11px; color: var(--maroon); font-family: 'Inter', sans-serif; letter-spacing: 0.06em; font-weight: 600; }
+
+  .nav-links { display: flex; gap: 34px; list-style: none; font-size: 15px; }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); transition: color 0.15s ease; }
+  .nav-links a:hover { color: var(--maroon); }
+
+  .nav-cta {
+    background: var(--maroon);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s ease;
+  }
+  .nav-cta:hover { background: var(--maroon-deep); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 88px 0 84px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero .est {
+    font-size: 14px;
+    color: var(--maroon);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 { font-size: 48px; max-width: 560px; }
+
+  .hero p.lede {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 460px;
+  }
+
+  .hero-ctas { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-primary { background: var(--maroon); color: var(--white); }
+  .btn-primary:hover { background: var(--maroon-deep); }
+  .btn-outline { background: transparent; border-color: var(--ink); color: var(--ink); }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+  .hero-seal {
+    position: relative;
+    height: 380px;
+    border-radius: 4px;
+    background: var(--white);
+    border: 1px solid var(--stone-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-seal-ring {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 3px solid var(--maroon);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+  }
+  .hero-seal-ring::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    border: 1px solid var(--stone-light);
+  }
+  .hero-seal-ring .mono {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 44px;
+    color: var(--maroon);
+  }
+  .hero-seal-ring .tag { font-size: 12px; letter-spacing: 0.12em; color: var(--stone); }
+  .hero-seal-ring .since2 { font-size: 12px; letter-spacing: 0.08em; color: var(--stone); margin-top: 8px; }
+
+  /* ---------- STATS BAR ---------- */
+  .stats {
+    border-top: 1px solid var(--stone-light);
+    border-bottom: 1px solid var(--stone-light);
+    background: var(--paper-warm);
+  }
+  .stats .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 40px 32px;
+  }
+  .stat { text-align: left; border-left: 1px solid var(--stone-light); padding-left: 24px; }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat .n { font-family: 'Fraunces', serif; font-size: 32px; color: var(--maroon); }
+  .stat .l { font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; }
+
+  /* ---------- WHY WORK HERE ---------- */
+  .why { padding: 96px 0 100px; }
+  .why-head { max-width: 520px; margin-bottom: 48px; }
+  .why-head .tag { font-size: 14px; color: var(--maroon); font-weight: 600; }
+  .why-head h2 { font-size: 32px; margin-top: 10px; }
+
+  .why-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--stone-light); }
+  .why-item {
+    padding: 28px 24px 28px 0;
+    border-left: 1px solid var(--stone-light);
+    padding-left: 24px;
+  }
+  .why-item:first-child { border-left: none; padding-left: 0; }
+  .why-item h3 { font-size: 19px; }
+  .why-item p { margin-top: 10px; font-size: 14.5px; color: var(--ink-soft); }
+
+  /* ---------- ROLES ---------- */
+  .roles {
+    background: var(--maroon);
+    color: var(--paper);
+    padding: 88px 0;
+  }
+  .roles-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 42px; flex-wrap: wrap; gap: 20px; }
+  .roles-head h2 { color: var(--paper); font-size: 32px; }
+  .roles-head p { color: #EBD9DB; max-width: 380px; }
+
+  .role-list { list-style: none; }
+  .role-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+  .role-item:first-child { border-top: 1px solid rgba(255,255,255,0.18); }
+  .role-title { font-family: 'Fraunces', serif; font-size: 19px; }
+  .role-meta { color: #EBD9DB; font-size: 14px; }
+  .role-link {
+    text-decoration: none;
+    color: var(--paper);
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--paper);
+    padding-bottom: 2px;
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process { padding: 100px 0; }
+  .process-head { max-width: 520px; margin-bottom: 56px; }
+  .process-head h2 { font-size: 32px; }
+  .process-head p { margin-top: 14px; color: var(--ink-soft); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .step { padding: 0 24px 0 0; border-left: 1px solid var(--stone-light); padding-left: 24px; }
+  .step:first-child { border-left: none; padding-left: 0; }
+  .step .num { font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; color: var(--maroon); }
+  .step h3 { font-size: 19px; margin-top: 10px; }
+  .step p { margin-top: 10px; font-size: 14.5px; color: var(--ink-soft); }
+
+  /* ---------- TESTIMONIAL ---------- */
+  .testimonial { padding: 0 0 96px; }
+  .testimonial blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: 27px;
+    font-style: italic;
+    max-width: 720px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .testimonial cite { display: block; margin-top: 24px; font-style: normal; font-size: 15px; color: var(--ink-soft); }
+
+  /* ---------- CONTACT ---------- */
+  .contact { background: var(--paper-warm); padding: 88px 0; border-top: 1px solid var(--stone-light); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .contact h2 { font-size: 32px; max-width: 360px; }
+  .contact p { margin-top: 14px; color: var(--ink-soft); max-width: 380px; }
+  .contact .addr { margin-top: 22px; font-size: 14.5px; color: var(--ink-soft); }
+  .contact .addr b { color: var(--ink); display: block; margin-bottom: 2px; }
+
+  form { display: flex; flex-direction: column; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 13.5px; color: var(--ink-soft); }
+  .field input, .field select, .field textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--stone-light);
+    border-radius: 3px;
+    background: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .field textarea { resize: vertical; min-height: 90px; }
+  .field .hint { font-size: 12.5px; color: var(--stone); line-height: 1.45; }
+  .form-status { min-height: 22px; font-size: 14px; color: var(--ink-soft); }
+  .form-status.success { color: #28653b; }
+  .form-status.error { color: var(--maroon); }
+  .hidden-field { position: absolute; left: -9999px; }
+  form .btn { align-self: flex-start; margin-top: 6px; }
+  form .btn:disabled { cursor: wait; opacity: 0.7; }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--ink); color: #B5AFA9; padding: 48px 0 32px; }
+  .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .footer-brand { display: flex; align-items: center; gap: 10px; }
+  .footer-brand .seal { border-color: #C97E88; color: #C97E88; }
+  .footer-brand .brand-text { color: var(--paper); }
+  .footer-brand .kicker { color: #C97E88; }
+  .foot-links { display: flex; gap: 28px; list-style: none; font-size: 14px; }
+  .foot-links a { text-decoration: none; color: #B5AFA9; }
+  .foot-links a:hover { color: var(--paper); }
+  .footer-bottom { padding-top: 20px; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 48px; }
+    .hero h1 { font-size: 34px; }
+    .stats .wrap { grid-template-columns: 1fr 1fr; row-gap: 24px; }
+    .stat:nth-child(3) { border-left: none; padding-left: 0; }
+    .why-list { grid-template-columns: 1fr; }
+    .why-item { border-left: none; padding-left: 0; border-top: 1px solid var(--stone-light); padding-top: 24px; }
+    .why-item:first-child { border-top: none; padding-top: 0; }
+    .steps { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+    .step:nth-child(3) { border-left: none; padding-left: 0; }
+    .role-item { grid-template-columns: 1fr; gap: 6px; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--maroon);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="brand">
+      <div class="seal">CIA</div>
+      <div class="brand-text">
+        <span class="kicker">CAREERS AT</span>
+        <span class="full">Cebu International Academy</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#why">Why Work Here</a></li>
+      <li><a href="#roles">Open Positions</a></li>
+      <li><a href="#process">How to Apply</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#roles" class="nav-cta">See open roles</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap" style="display:contents;">
+    <div>
+      <div class="est">Hiring educators & staff since 2003</div>
+      <h1>Teach where 30+ nationalities call home.</h1>
+      <p class="lede">Cebu International Academy is looking for teachers and staff who want small classes, real professional support, and a community that's genuinely international — right here in Cebu.</p>
+      <div class="hero-ctas">
+        <a href="#roles" class="btn btn-primary">Browse open positions</a>
+        <a href="#process" class="btn btn-outline">How hiring works</a>
+      </div>
+    </div>
+    <div class="hero-seal">
+      <div class="hero-seal-ring">
+        <span class="mono">CIA</span>
+        <span class="tag">CEBU INTERNATIONAL ACADEMY</span>
+        <span class="since2">SINCE 2003</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat">
+      <div class="n">2003</div>
+      <div class="l">Founded in Cebu City</div>
+    </div>
+    <div class="stat">
+      <div class="n">30+</div>
+      <div class="l">Nationalities on staff</div>
+    </div>
+    <div class="stat">
+      <div class="n">12:1</div>
+      <div class="l">Student to teacher ratio</div>
+    </div>
+    <div class="stat">
+      <div class="n">15+</div>
+      <div class="l">Open roles this year</div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why-head">
+      <div class="tag">Why work here</div>
+      <h2>A staff room as international as the classroom.</h2>
+    </div>
+    <div class="why-list">
+      <div class="why-item">
+        <h3>Small classes, real relationships</h3>
+        <p>A 12:1 student-to-teacher ratio means you know your students by name, not by roster number.</p>
+      </div>
+      <div class="why-item">
+        <h3>Professional development built in</h3>
+        <p>Ongoing training, mentorship for new teachers, and support for international certifications.</p>
+      </div>
+      <div class="why-item">
+        <h3>A genuinely global staff room</h3>
+        <p>Colleagues from over a dozen countries, with relocation support for teachers moving to Cebu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roles" id="roles">
+  <div class="wrap">
+    <div class="roles-head">
+      <h2>Open positions</h2>
+      <p>Explore our current full-time opportunities.</p>
+    </div>
+    <ul class="role-list">
+      <li class="role-item">
+        <div>
+          <div class="role-title">Operations Supervisor</div>
+          <div class="role-meta">Cebu City · Full-time</div>
+        </div>
+        <div class="role-meta">Operations</div>
+        <a href="#contact" class="role-link apply-link" data-role="Operations Supervisor" aria-label="Apply for Operations Supervisor">Apply</a>
+      </li>
+      <li class="role-item">
+        <div>
+          <div class="role-title">HR-HEAD</div>
+          <div class="role-meta">Cebu City · Full-time</div>
+        </div>
+        <div class="role-meta">Human Resources</div>
+        <a href="#contact" class="role-link apply-link" data-role="HR-HEAD" aria-label="Apply for HR-HEAD">Apply</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="process-head">
+      <h2>How hiring works</h2>
+      <p>The same four steps for every role, from teaching positions to administration.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">I.</div>
+        <h3>Apply</h3>
+        <p>Submit your resume and a short note on why you'd fit the role and our school community.</p>
+      </div>
+      <div class="step">
+        <div class="num">II.</div>
+        <h3>Screening call</h3>
+        <p>A 20-minute call with our HR team to talk through the role and answer your questions.</p>
+      </div>
+      <div class="step">
+        <div class="num">III.</div>
+        <h3>Interview & demo</h3>
+        <p>Teaching roles include a short demo lesson; other roles meet with the relevant department head.</p>
+      </div>
+      <div class="step">
+        <div class="num">IV.</div>
+        <h3>Offer</h3>
+        <p>References are checked and an offer follows, with relocation support where needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="wrap">
+    <blockquote>
+      "I came for a one-year contract and I'm on year six. The support you get here, as a new teacher especially, isn't something I found anywhere else."
+      <cite>— Secondary Science Teacher, joined 2020</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Ready to apply?</h2>
+      <p>Send us your details and the role you're interested in. Each application is saved as a structured submission for faster screening.</p>
+      <div class="addr">
+        <b>Cebu International Academy — Careers</b>
+        Cebu City, Central Visayas, Philippines<br>
+        careers@cebuinternationalacademy.example
+      </div>
+    </div>
+    <form id="application-form" name="job-application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="job-application">
+      <p class="hidden-field" aria-hidden="true">
+        <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </p>
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" name="full_name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="role">Position you're applying for</label>
+        <select id="role" name="position" required>
+          <option value="">Select a position</option>
+          <option value="Operations Supervisor">Operations Supervisor</option>
+          <option value="HR-HEAD">HR-HEAD</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Tell us about yourself</label>
+        <textarea id="message" name="about_yourself" required></textarea>
+      </div>
+      <div class="field">
+        <label for="resume">Resume link</label>
+        <input id="resume" name="resume_link" type="url" inputmode="url" placeholder="https://docs.google.com/..." aria-describedby="resume-hint" required>
+        <span class="hint" id="resume-hint">Share a public Google Drive, Google Docs, Dropbox, or similar link that our HR team can open.</span>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit application</button>
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="seal">CIA</div>
+        <div class="brand-text">
+          <span class="kicker">CAREERS AT</span>
+          <span class="full">Cebu International Academy</span>
+        </div>
+      </div>
+      <ul class="foot-links">
+        <li><a href="#why">Why Work Here</a></li>
+        <li><a href="#roles">Open Positions</a></li>
+        <li><a href="#process">How to Apply</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cebu International Academy. All rights reserved.</span>
+      <span>Cebu City, Philippines</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const applicationForm = document.getElementById('application-form');
+  const roleSelect = document.getElementById('role');
+  const formStatus = document.getElementById('form-status');
+  const submitButton = applicationForm.querySelector('button[type="submit"]');
+
+  document.querySelectorAll('.apply-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      roleSelect.value = link.dataset.role;
+      window.setTimeout(() => document.getElementById('name').focus(), 250);
+    });
+  });
+
+  applicationForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting…';
+    formStatus.className = 'form-status';
+    formStatus.textContent = '';
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(applicationForm)).toString()
+      });
+
+      if (!response.ok) throw new Error('Submission failed');
+
+      applicationForm.reset();
+      formStatus.className = 'form-status success';
+      formStatus.textContent = 'Application submitted. Thank you — our HR team can now review your details.';
+    } catch (error) {
+      formStatus.className = 'form-status error';
+      formStatus.textContent = 'We could not submit your application. Please check your connection and try again.';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Submit application';
+    }
+  });
+</script>
+
+<!--
+  EDITING NOTES:
+  - This is a CAREERS / recruitment site for Cebu International Academy (hiring teachers & staff), not the school's main admissions site.
+  - Colors match the CIA seal logo via CSS variables at the top of the <style> block (--maroon, --ink, --paper, --stone).
+  - The "CIA" text-seal is built with CSS — swap in an <img> tag pointing to your real logo file if you'd prefer that instead.
+  - Update the open positions list, stats, and testimonial with real ones as they become available.
+  - Applications are collected through Netlify Forms under the "job-application" form name.
+-->
+
+</body>
+</html>
