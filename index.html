@@ -87,6 +87,9 @@
     height: 44px;
     object-fit: contain; 
     flex-shrink: 0;
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    will-change: transform;
   }
   .hero-logo {
     width: 260px
@@ -359,7 +362,7 @@
 <header>
   <nav class="nav">
     <div class="brand">
-      <img src="cia-logo.png?v=2" alt="Cebu International Academy logo" class="brand-logo">
+      <img src="cia-logo.png?v=2" alt="Cebu International Academy logo" class="brand-logo spin-logo">
       <div class="brand-text">
         <span class="kicker">CAREERS AT</span>
         <span class="full">Cebu International Academy</span>
