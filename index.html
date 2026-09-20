@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  document.documentElement.classList.add('js');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers at Cebu International Academy</title>
@@ -92,11 +95,11 @@
     transition: transform 0.4s ease;
     will-change: transform;
   }
-  .hero-logo {
-    width: 260px
-    height: 260px;
-    object-fit: contain; 
-  }
+.hero-logo {
+  width: 260px;
+  height: 260px;
+  object-fit: contain;
+}
 
   .brand-text { font-family: 'Fraunces', serif; font-size: 15.5px; line-height: 1.25; }
   .brand-text .full { display: block; }
@@ -330,7 +333,193 @@
   .foot-links a { text-decoration: none; color: #B5AFA9; }
   .foot-links a:hover { color: var(--paper); }
   .footer-bottom { padding-top: 20px; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  
+/* ---------- SUBTLE MOTION ---------- */
+.js .hero .est,
+.js .hero h1,
+.js .hero .lede,
+.js .hero-ctas,
+.js .hero-seal {
+  opacity: 0;
+  transform: translateY(18px);
+}
 
+.js .hero-seal {
+  transform: translateY(18px) scale(0.97);
+}
+
+.js .stat,
+.js .why-item,
+.js .step,
+.js .role-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-seal {
+  overflow: hidden;
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.hero-seal::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(27, 58, 138, 0.12),
+    transparent 68%
+  );
+  animation: softPulse 5s ease-in-out infinite;
+}
+
+.hero-seal-ring {
+  transition: transform 500ms ease;
+}
+
+.hero-seal:hover {
+  border-color: rgba(27, 58, 138, 0.45);
+  box-shadow: 0 18px 45px rgba(27, 58, 138, 0.12);
+}
+
+.hero-seal:hover .hero-seal-ring {
+  transform: scale(1.025);
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+.brand-logo {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brand:hover .brand-logo {
+  transform: rotate(8deg) scale(1.06);
+}
+
+.btn,
+.nav-cta,
+.role-link,
+.nav-links a,
+.foot-links a {
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.btn:hover,
+.nav-cta:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover,
+.nav-cta:hover {
+  box-shadow: 0 8px 20px rgba(18, 42, 102, 0.2);
+}
+
+.stat {
+  transition: transform 250ms ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+}
+
+.why-item {
+  transition:
+    transform 250ms ease,
+    background-color 250ms ease;
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+}
+
+.role-item {
+  transition:
+    padding-left 250ms ease,
+    background-color 250ms ease;
+}
+
+.role-item:hover {
+  padding-left: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.role-link {
+  transition: border-color 220ms ease, color 220ms ease;
+}
+
+.role-link:hover {
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.step {
+  transition: transform 250ms ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+}
+
+.field input,
+.field select,
+.field textarea {
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--maroon);
+  box-shadow: 0 0 0 3px rgba(27, 58, 138, 0.12);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .hero .est,
+  .js .hero h1,
+  .js .hero .lede,
+  .js .hero-ctas,
+  .js .hero-seal,
+  .js .stat,
+  .js .why-item,
+  .js .step,
+  .js .role-item {
+    opacity: 1;
+    transform: none;
+  }
+}
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 860px) {
     .nav-links { display: none; }
@@ -626,46 +815,82 @@
   </div>
 </footer>
 
-<script src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js)"></script>
 <script>
-  const { animate, inView } = Motion;
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
-  animate(".spin-logo", { rotate: [0, 360] }, { duration: 1, easing: "ease-in-out" });
+  const revealImmediately = (element) => {
+    element.style.opacity = '1';
+    element.style.transform = 'none';
+  };
 
-  animate(".hero .est",  { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.1 });
-  animate(".hero h1",    { opacity: [0, 1], y: [24, 0] }, { duration: 0.7 });
-  animate(".hero .lede", { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.2 });
-  animate(".hero-ctas",  { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.3 });
-  animate(".hero-seal",  { opacity: [0, 1], scale: [0.94, 1] }, { duration: 0.8, delay: 0.2 });
+  const reveal = (element, delay = 0) => {
+    if (prefersReducedMotion) {
+      revealImmediately(element);
+      return;
+    }
 
-  inView(".stat",     (el) => animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 }), { amount: 0.3 });
-  inView(".why-card", (el) => animate(el, { opacity: [0, 1], y: [24, 0] }, { duration: 0.5 }), { amount: 0.2 });
-  inView(".step",     (el) => animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 }), { amount: 0.2 });
+    window.setTimeout(() => {
+      element.style.transition =
+        'opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1)';
+      revealImmediately(element);
+    }, delay);
+  };
 
-  const roles = document.querySelectorAll(".role-item");
-  roles.forEach((el, i) => {
-    inView(el, () => animate(el, { opacity: [0, 1], x: [-16, 0] }, { duration: 0.45, delay: i * 0.06 }), { amount: 0.2 });
+  reveal(document.querySelector('.hero .est'), 100);
+  reveal(document.querySelector('.hero h1'), 180);
+  reveal(document.querySelector('.hero .lede'), 280);
+  reveal(document.querySelector('.hero-ctas'), 380);
+  reveal(document.querySelector('.hero-seal'), 250);
+
+  const revealItems = document.querySelectorAll(
+    '.stat, .why-item, .step, .role-item'
+  );
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const delay = Number(entry.target.dataset.revealDelay || 0);
+        reveal(entry.target, delay);
+        currentObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    }
+  );
+
+  revealItems.forEach((element, index) => {
+    element.dataset.revealDelay = (index % 4) * 70;
+    observer.observe(element);
   });
-</script>
 
-
-  
-<script>
   const applicationForm = document.getElementById('application-form');
   const roleSelect = document.getElementById('role');
   const formStatus = document.getElementById('form-status');
-  const submitButton = applicationForm.querySelector('button[type="submit"]');
+  const submitButton = applicationForm.querySelector(
+    'button[type="submit"]'
+  );
 
   document.querySelectorAll('.apply-link').forEach((link) => {
     link.addEventListener('click', () => {
       roleSelect.value = link.dataset.role;
-      window.setTimeout(() => document.getElementById('name').focus({ preventScroll: false});
-    }, 250);
+
+      window.setTimeout(() => {
+        document.getElementById('name').focus({
+          preventScroll: false
+        });
+      }, 250);
     });
   });
 
   applicationForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+
     submitButton.disabled = true;
     submitButton.textContent = 'Submitting…';
     formStatus.className = 'form-status';
@@ -674,18 +899,26 @@
     try {
       const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(applicationForm)).toString()
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(
+          new FormData(applicationForm)
+        ).toString()
       });
 
-      if (!response.ok) throw new Error('Submission failed');
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
 
       applicationForm.reset();
       formStatus.className = 'form-status success';
-      formStatus.textContent = 'Application submitted. Thank you — our HR team can now review your details.';
+      formStatus.textContent =
+        'Application submitted. Thank you — our HR team can now review your details.';
     } catch (error) {
       formStatus.className = 'form-status error';
-      formStatus.textContent = 'We could not submit your application. Please check your connection and try again.';
+      formStatus.textContent =
+        'We could not submit your application. Please check your connection and try again.';
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = 'Submit application';
