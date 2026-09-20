@@ -379,7 +379,6 @@
 </header>
 
 <section class="hero">
-  <div class="wrap" style="display:contents;">
     <div>
         <div class="est">Hiring educators & staff since 2003</div>
               <h1>Teach where 30+ nationalities call home.</h1>
@@ -581,6 +580,11 @@
   </div>
 </footer>
 
+<script type="module">
+  import { animate } from "[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/motion@latest/+esm)";
+  animate(".spin-logo", { rotate: [0, 360] }, { duration: 1, easing: "ease-in-out" });
+</script>
+  
 <script>
   const applicationForm = document.getElementById('application-form');
   const roleSelect = document.getElementById('role');
@@ -590,7 +594,8 @@
   document.querySelectorAll('.apply-link').forEach((link) => {
     link.addEventListener('click', () => {
       roleSelect.value = link.dataset.role;
-      window.setTimeout(() => document.getElementById('name').focus(), 250);
+      window.setTimeout(() => document.getElementById('name').focus({ preventScroll: false});
+    }, 250);
     });
   });
 
