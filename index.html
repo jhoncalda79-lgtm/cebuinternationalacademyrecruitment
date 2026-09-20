@@ -9,16 +9,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper: #FAF8F4;
-    --paper-warm: #F1EBE3;
-    --ink: #221F1D;
-    --ink-soft: #58524C;
-    --maroon: #8A1B2A;
-    --maroon-deep: #5E1119;
-    --stone: #8C8B84;
-    --stone-light: #DAD7CD;
-    --white: #FFFFFF;
-  }
+  --paper: #FAF8F4;
+  --paper-warm: #F1EBE3;
+  --ink: #221F1D;
+  --ink-soft: #58524C;
+
+  /* switched maroon → deep blue */
+  --maroon: #1B3A8A;        /* primary blue (was #8A1B2A) */
+  --maroon-deep: #122A66;   /* darker blue for hover states */
+
+  --stone: #8C8B84;
+  --stone-light: #DAD7CD;
+  --white: #FFFFFF;
+
+  /* kept red for the logo only */
+  --logo-red: #8A1B2A;
+}
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
