@@ -626,9 +626,42 @@
 </footer>
 
 <script type="module">
-  import { animate } from "[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/motion@latest/+esm)";
+  import { animate, inView } from "[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/motion@latest/+esm)";
+
+  // 1. Logo spins once on load
   animate(".spin-logo", { rotate: [0, 360] }, { duration: 1, easing: "ease-in-out" });
+
+  // 2. Hero text fades + slides up on load
+  animate(".hero .est", { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.1 });
+  animate(".hero h1", { opacity: [0, 1], y: [24, 0] }, { duration: 0.7, ease: "ease-out" });
+  animate(".hero .lede", { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.2 });
+  animate(".hero-ctas", { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.3 });
+  animate(".hero-seal", { opacity: [0, 1], scale: [0.94, 1] }, { duration: 0.8, delay: 0.2 });
+
+  // 3. Stats bar reveals as you scroll to it
+  inView(".stat", (el) => {
+    animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 });
+  }, { amount: 0.3 });
+
+  // 4. "Why work here" cards fade up
+  inView(".why-card", (el) => {
+    animate(el, { opacity: [0, 1], y: [24, 0] }, { duration: 0.5 });
+  }, { amount: 0.2 });
+
+  // 5. Role rows slide in from the left, staggered
+  const roles = document.querySelectorAll(".role-item");
+  roles.forEach((el, i) => {
+    inView(el, () => {
+      animate(el, { opacity: [0, 1], x: [-16, 0] }, { duration: 0.45, delay: i * 0.06 });
+    }, { amount: 0.2 });
+  });
+
+  // 6. Hiring steps fade up
+  inView(".step", (el) => {
+    animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 });
+  }, { amount: 0.2 });
 </script>
+
   
 <script>
   const applicationForm = document.getElementById('application-form');
