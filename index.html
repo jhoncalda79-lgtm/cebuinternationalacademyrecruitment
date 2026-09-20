@@ -70,7 +70,19 @@
     margin: 0 auto;
   }
 
-  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.brand:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
 
   .seal {
     width: 44px;
@@ -577,17 +589,17 @@
 
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <nav class="nav">
-    <div class="brand">
+    <a href="#top" class="brand">
       <img src="cia-logo.png?v=2" alt="Cebu International Academy logo" class="brand-logo spin-logo">
       <div class="brand-text">
         <span class="kicker">CAREERS AT</span>
         <span class="full">Cebu International Academy</span>
       </div>
-    </div>
+    </a>
     <ul class="nav-links">
       <li><a href="#why">Why Work Here</a></li>
       <li><a href="#roles">Open Positions</a></li>
