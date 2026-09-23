@@ -28,7 +28,7 @@
 
   /* kept red for the logo only */
   --logo-red: #8A1B2A;
-}
+ }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -375,217 +375,217 @@
   .foot-links a:hover { color: var(--paper); }
   .footer-bottom { padding-top: 20px; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
   
-/* ---------- SUBTLE MOTION ---------- */
-.js .hero .est,
-.js .hero h1,
-.js .hero .lede,
-.js .hero-ctas,
-.js .hero-seal {
-  opacity: 0;
-  transform: translateY(18px);
-}
+ /* ---------- SUBTLE MOTION ---------- */
+ .js .hero .est,
+ .js .hero h1,
+ .js .hero .lede,
+ .js .hero-ctas,
+ .js .hero-seal {
+   opacity: 0;
+   transform: translateY(18px);
+ }
 
-.js .hero-seal {
-  transform: translateY(18px) scale(0.97);
-}
+ .js .hero-seal {
+   transform: translateY(18px) scale(0.97);
+ }
 
-.js .stat,
-.js .why-item,
-.js .step,
-.js .role-item {
-  opacity: 0;
-  transform: translateY(20px);
-}
+ .js .stat,
+ .js .why-item,
+ .js .step,
+ .js .role-item {
+   opacity: 0;
+   transform: translateY(20px);
+ }
 
-.hero-seal {
-  overflow: hidden;
-  transition: border-color 300ms ease, box-shadow 300ms ease;
-}
+ .hero-seal {
+   overflow: hidden;
+   transition: border-color 300ms ease, box-shadow 300ms ease;
+ }
 
-.hero-seal::before {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(27, 58, 138, 0.12),
-    transparent 68%
-  );
-  animation: softPulse 5s ease-in-out infinite;
-}
+ .hero-seal::before {
+   content: "";
+   position: absolute;
+   width: 280px;
+   height: 280px;
+   border-radius: 50%;
+   background: radial-gradient(
+     circle,
+     rgba(27, 58, 138, 0.12),
+     transparent 68%
+   );
+   animation: softPulse 5s ease-in-out infinite;
+ }
 
-.hero-seal-ring {
-  transition: transform 500ms ease;
-}
+ .hero-seal-ring {
+   transition: transform 500ms ease;
+ }
 
-.hero-seal:hover {
-  border-color: rgba(27, 58, 138, 0.45);
-  box-shadow: 0 18px 45px rgba(27, 58, 138, 0.12);
-}
+ .hero-seal:hover {
+   border-color: rgba(27, 58, 138, 0.45);
+   box-shadow: 0 18px 45px rgba(27, 58, 138, 0.12);
+ }
 
-.hero-seal:hover .hero-seal-ring {
-  transform: scale(1.025);
-}
+ .hero-seal:hover .hero-seal-ring {
+   transform: scale(1.025);
+ }
 
-@keyframes softPulse {
-  0%, 100% {
-    opacity: 0.45;
-    transform: scale(0.92);
-  }
+ @keyframes softPulse {
+   0%, 100% {
+     opacity: 0.45;
+     transform: scale(0.92);
+   }
 
-  50% {
-    opacity: 0.9;
-    transform: scale(1.08);
-  }
-}
+   50% {
+     opacity: 0.9;
+     transform: scale(1.08);
+   }
+ }
 
-.brand-logo {
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
-}
+ .brand-logo {
+   transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+ }
 
-.brand:hover .brand-logo {
-  transform: rotate(8deg) scale(1.06);
-}
+ .brand:hover .brand-logo {
+   transform: rotate(8deg) scale(1.06);
+ }
 
-.btn,
-.nav-cta,
-.role-link,
-.nav-links a,
-.foot-links a {
-  transition:
-    color 220ms ease,
-    background-color 220ms ease,
-    border-color 220ms ease,
-    transform 220ms ease,
-    box-shadow 220ms ease;
-}
+ .btn,
+ .nav-cta,
+ .role-link,
+ .nav-links a,
+ .foot-links a {
+   transition:
+     color 220ms ease,
+     background-color 220ms ease,
+     border-color 220ms ease,
+     transform 220ms ease,
+     box-shadow 220ms ease;
+ }
 
-.btn:hover,
-.nav-cta:hover {
-  transform: translateY(-2px);
-}
+ .btn:hover,
+ .nav-cta:hover {
+   transform: translateY(-2px);
+ }
 
-.btn-primary:hover,
-.nav-cta:hover {
-  box-shadow: 0 8px 20px rgba(18, 42, 102, 0.2);
-}
+ .btn-primary:hover,
+ .nav-cta:hover {
+   box-shadow: 0 8px 20px rgba(18, 42, 102, 0.2);
+ }
 
-.stat {
-  transition: transform 250ms ease;
-}
+ .stat {
+   transition: transform 250ms ease;
+ }
 
-.stat:hover {
-  transform: translateY(-4px);
-}
+ .stat:hover {
+   transform: translateY(-4px);
+ }
 
-.why-item {
-  transition:
-    transform 250ms ease,
-    background-color 250ms ease;
-}
+ .why-item {
+   transition:
+     transform 250ms ease,
+     background-color 250ms ease;
+ }
 
-.why-item:hover {
-  transform: translateY(-5px);
-}
+ .why-item:hover {
+   transform: translateY(-5px);
+ }
 
-.role-item {
-  transition:
-    padding-left 250ms ease,
-    background-color 250ms ease;
-}
+ .role-item {
+   transition:
+     padding-left 250ms ease,
+     background-color 250ms ease;
+ }
 
-.role-item:hover {
-  padding-left: 12px;
-  background: rgba(255, 255, 255, 0.055);
-}
+ .role-item:hover {
+   padding-left: 12px;
+   background: rgba(255, 255, 255, 0.055);
+ }
 
-.role-link {
-  transition: border-color 220ms ease, color 220ms ease;
-}
+ .role-link {
+   transition: border-color 220ms ease, color 220ms ease;
+ }
 
-.role-link:hover {
-  color: #ffffff;
-  border-color: transparent;
-}
+ .role-link:hover {
+   color: #ffffff;
+   border-color: transparent;
+ }
 
-.step {
-  transition: transform 250ms ease;
-}
+ .step {
+   transition: transform 250ms ease;
+ }
 
-.step:hover {
-  transform: translateY(-4px);
-}
+ .step:hover {
+   transform: translateY(-4px);
+ }
 
-.field input,
-.field select,
-.field textarea {
-  transition:
-    border-color 200ms ease,
-    box-shadow 200ms ease,
-    background-color 200ms ease;
-}
+ .field input,
+ .field select,
+ .field textarea {
+   transition:
+     border-color 200ms ease,
+     box-shadow 200ms ease,
+     background-color 200ms ease;
+ }
 
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  border-color: var(--maroon);
-  box-shadow: 0 0 0 3px rgba(27, 58, 138, 0.12);
-  outline: none;
-}
+ .field input:focus,
+ .field select:focus,
+ .field textarea:focus {
+   border-color: var(--maroon);
+   box-shadow: 0 0 0 3px rgba(27, 58, 138, 0.12);
+   outline: none;
+ }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+ @media (prefers-reduced-motion: reduce) {
+   html {
+     scroll-behavior: auto;
+   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+   *,
+   *::before,
+   *::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+   }
 
-  .js .hero .est,
-  .js .hero h1,
-  .js .hero .lede,
-  .js .hero-ctas,
-  .js .hero-seal,
-  .js .stat,
-  .js .why-item,
-  .js .step,
-  .js .role-item {
-    opacity: 1;
-    transform: none;
-  }
-}
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 860px) {
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; padding-top: 48px; }
-    .hero h1 { font-size: 34px; }
-    .stats .wrap { grid-template-columns: 1fr 1fr; row-gap: 24px; }
-    .stat:nth-child(3) { border-left: none; padding-left: 0; }
-    .why-list { grid-template-columns: 1fr; }
-    .why-item { border-left: none; padding-left: 0; border-top: 1px solid var(--stone-light); padding-top: 24px; }
-    .why-item:first-child { border-top: none; padding-top: 0; }
-    .steps { grid-template-columns: 1fr 1fr; row-gap: 32px; }
-    .step:nth-child(3) { border-left: none; padding-left: 0; }
-    .role-item { grid-template-columns: 1fr; gap: 6px; }
-    .contact-grid { grid-template-columns: 1fr; }
-  }
+   .js .hero .est,
+   .js .hero h1,
+   .js .hero .lede,
+   .js .hero-ctas,
+   .js .hero-seal,
+   .js .stat,
+   .js .why-item,
+   .js .step,
+   .js .role-item {
+     opacity: 1;
+     transform: none;
+   }
+ }
+   /* ---------- RESPONSIVE ---------- */
+   @media (max-width: 860px) {
+     .nav-links { display: none; }
+     .hero { grid-template-columns: 1fr; padding-top: 48px; }
+     .hero h1 { font-size: 34px; }
+     .stats .wrap { grid-template-columns: 1fr 1fr; row-gap: 24px; }
+     .stat:nth-child(3) { border-left: none; padding-left: 0; }
+     .why-list { grid-template-columns: 1fr; }
+     .why-item { border-left: none; padding-left: 0; border-top: 1px solid var(--stone-light); padding-top: 24px; }
+     .why-item:first-child { border-top: none; padding-top: 0; }
+     .steps { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+     .step:nth-child(3) { border-left: none; padding-left: 0; }
+     .role-item { grid-template-columns: 1fr; gap: 6px; }
+     .contact-grid { grid-template-columns: 1fr; }
+   }
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition: none !important; }
-  }
+   @media (prefers-reduced-motion: reduce) {
+     html { scroll-behavior: auto; }
+     * { transition: none !important; }
+   }
 
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-    outline: 2px solid var(--maroon);
-    outline-offset: 2px;
-}
+   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+     outline: 2px solid var(--maroon);
+     outline-offset: 2px;
+ }
 
 </style>
 </head>
@@ -614,18 +614,18 @@
     <div>
         <div class="est">Hiring educators & staff since 2003</div>
               <h1>Teach where 30+ nationalities call home.</h1>
-              <p class="lede">Cebu International Academy is looking for teachers and staff who want small classes, real professional support, and a community that's genuinely international right here in Lapu-Lapu, Cebu.</p>
+              <p class="lede">Cebu International Academy is looking for teachers and staff who want small classes, real professional support, and a community that's genuinely international right here in Cebu.</p>
       <div class="hero-ctas">
         <a href="#roles" class="btn btn-primary">Browse open positions</a>
         <a href="#process" class="btn btn-outline">How hiring works</a>
       </div>
     </div>
     <div class="hero-seal">
-      <div class="hero-seal-ring">
-        <span class="mono">CIA</span>
-        <span class="tag">CEBU INTERNATIONAL ACADEMY</span>
-        <span class="since2">SINCE 2003</span>
-      </div>
+      <img
+        src="cia-logo.png"
+        alt="Cebu International Academy logo"
+        class="hero-logo"
+      >
     </div>
   </div>
 </section>
@@ -970,9 +970,9 @@
 <!--
   EDITING NOTES:
   - This is a CAREERS / recruitment site for Cebu International Academy (hiring teachers & staff), not the school's main admissions site.
-  - Welcome to the Open Source part of the CIA website :) 
+  - Welcome to the Open Source part of the CIA website :)
   - Feel free to send us a message on facebook CIA MACTAN HRD
-  - Send us your resume and portfolio stating why would you apply as a Laravel / Livewire Developer 
+  - Send us your resume and portfolio stating why would you apply as a Laravel / Livewire Developer
   - Good luck ;)
 -->
 
