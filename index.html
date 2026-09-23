@@ -18,15 +18,13 @@
   --ink: #221F1D;
   --ink-soft: #58524C;
 
-  /* switched maroon → deep blue */
-  --maroon: #1B3A8A;        /* primary blue (was #8A1B2A) */
-  --maroon-deep: #122A66;   /* darker blue for hover states */
+  --maroon: #1B3A8A;
+  --maroon-deep: #122A66;
 
   --stone: #8C8B84;
   --stone-light: #DAD7CD;
   --white: #FFFFFF;
 
-  /* kept red for the logo only */
   --logo-red: #8A1B2A;
  }
 
@@ -52,7 +50,6 @@
 
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
 
-  /* ---------- HEADER ---------- */
   header {
     position: sticky;
     top: 0;
@@ -108,9 +105,15 @@
     will-change: transform;
   }
 .hero-logo {
-  width: 260px;
-  height: 260px;
-  object-fit: contain;
+  width: 410px;
+  height: 410px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #0c4b45;
+  background: var(--white);
+  box-shadow: 0 12px 28px rgba(12, 75, 69, 0.12);
+  display: block;
+  margin: 0 auto;
 }
 
   .brand-text { font-family: 'Fraunces', serif; font-size: 15.5px; line-height: 1.25; }
@@ -162,7 +165,6 @@
   }
   .nav-cta:hover { background: var(--maroon-deep); }
 
-  /* ---------- HERO ---------- */
   .hero {
     padding: 88px 0 40px;
     display: grid;
@@ -210,43 +212,28 @@
 
   .hero-seal {
     position: relative;
-    height: 380px;
-    border-radius: 4px;
-    background: var(--white);
-    border: 1px solid var(--stone-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-seal-ring {
-    width: 260px;
-    height: 260px;
+    height: 440px;
     border-radius: 50%;
-    border: 3px solid var(--logo-red);
+    border: 6px solid #0c4b45;
+    background: transparent;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    position: relative;
+    overflow: hidden;
   }
-  .hero-seal-ring::before {
+
+  .hero-seal::before {
     content: "";
     position: absolute;
-    inset: 14px;
+    inset: 0;
     border-radius: 50%;
-    border: 1px solid var(--stone-light);
+    background: radial-gradient(circle, rgba(16, 75, 69, 0.08), transparent 68%);
   }
-  .hero-seal-ring .mono {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 44px;
-    color: var(--logo-red);
-  }
-  .hero-seal-ring .tag { font-size: 12px; letter-spacing: 0.12em; color: var(--stone); }
-  .hero-seal-ring .since2 { font-size: 12px; letter-spacing: 0.08em; color: var(--stone); margin-top: 8px; }
 
-  /* ---------- STATS BAR ---------- */
+  .hero-seal-ring {
+    display: none;
+  }
+
   .stats {
     border-top: 1px solid var(--stone-light);
     border-bottom: 1px solid var(--stone-light);
@@ -262,7 +249,6 @@
   .stat .n { font-family: 'Fraunces', serif; font-size: 32px; color: var(--maroon); }
   .stat .l { font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; }
 
-  /* ---------- WHY WORK HERE ---------- */
   .why { padding: 96px 0 100px; }
   .why-head { max-width: 520px; margin-bottom: 48px; }
   .why-head .tag { font-size: 14px; color: var(--maroon); font-weight: 600; }
@@ -278,7 +264,6 @@
   .why-item h3 { font-size: 19px; }
   .why-item p { margin-top: 10px; font-size: 14.5px; color: var(--ink-soft); }
 
-  /* ---------- ROLES ---------- */
   .roles {
     background: var(--maroon);
     color: var(--paper);
@@ -309,7 +294,6 @@
     padding-bottom: 2px;
   }
 
-  /* ---------- PROCESS ---------- */
   .process { padding: 100px 0; }
   .process-head { max-width: 520px; margin-bottom: 56px; }
   .process-head h2 { font-size: 32px; }
@@ -322,7 +306,6 @@
   .step h3 { font-size: 19px; margin-top: 10px; }
   .step p { margin-top: 10px; font-size: 14.5px; color: var(--ink-soft); }
 
-  /* ---------- TESTIMONIAL ---------- */
   .testimonial { padding: 0 0 96px; }
   .testimonial blockquote {
     font-family: 'Fraunces', serif;
@@ -334,7 +317,6 @@
   }
   .testimonial cite { display: block; margin-top: 24px; font-style: normal; font-size: 15px; color: var(--ink-soft); }
 
-  /* ---------- CONTACT ---------- */
   .contact { background: var(--paper-warm); padding: 88px 0; border-top: 1px solid var(--stone-light); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
   .contact h2 { font-size: 32px; max-width: 360px; }
@@ -363,7 +345,6 @@
   form .btn { align-self: flex-start; margin-top: 6px; }
   form .btn:disabled { cursor: wait; opacity: 0.7; }
 
-  /* ---------- FOOTER ---------- */
   footer { background: var(--ink); color: #B5AFA9; padding: 48px 0 32px; }
   .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.12); }
   .footer-brand { display: flex; align-items: center; gap: 10px; }
@@ -375,7 +356,6 @@
   .foot-links a:hover { color: var(--paper); }
   .footer-bottom { padding-top: 20px; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
   
- /* ---------- SUBTLE MOTION ---------- */
  .js .hero .est,
  .js .hero h1,
  .js .hero .lede,
@@ -402,31 +382,9 @@
    transition: border-color 300ms ease, box-shadow 300ms ease;
  }
 
- .hero-seal::before {
-   content: "";
-   position: absolute;
-   width: 280px;
-   height: 280px;
-   border-radius: 50%;
-   background: radial-gradient(
-     circle,
-     rgba(27, 58, 138, 0.12),
-     transparent 68%
-   );
-   animation: softPulse 5s ease-in-out infinite;
- }
-
- .hero-seal-ring {
-   transition: transform 500ms ease;
- }
-
  .hero-seal:hover {
-   border-color: rgba(27, 58, 138, 0.45);
-   box-shadow: 0 18px 45px rgba(27, 58, 138, 0.12);
- }
-
- .hero-seal:hover .hero-seal-ring {
-   transform: scale(1.025);
+   border-color: rgba(12, 75, 69, 0.7);
+   box-shadow: 0 18px 45px rgba(12, 75, 69, 0.12);
  }
 
  @keyframes softPulse {
@@ -561,11 +519,11 @@
      transform: none;
    }
  }
-   /* ---------- RESPONSIVE ---------- */
    @media (max-width: 860px) {
      .nav-links { display: none; }
      .hero { grid-template-columns: 1fr; padding-top: 48px; }
      .hero h1 { font-size: 34px; }
+     .hero-logo { width: 310px; height: 310px; }
      .stats .wrap { grid-template-columns: 1fr 1fr; row-gap: 24px; }
      .stat:nth-child(3) { border-left: none; padding-left: 0; }
      .why-list { grid-template-columns: 1fr; }
@@ -622,8 +580,8 @@
     </div>
     <div class="hero-seal">
       <img
-        src="cia-logo.png"
-        alt="Cebu International Academy logo"
+        src="cia-campus-logo.png"
+        alt="Cebu International Academy campus logo"
         class="hero-logo"
       >
     </div>
